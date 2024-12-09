@@ -1,0 +1,29 @@
+import streamlit as st
+import numpy as np
+import joblib
+
+# Load the trained model
+# Make sure your model file (basketball_model.pkl) is in the same directory
+model = joblib.load('basketball_model.pkl')  # Replace with your model filename
+
+# Streamlit App
+st.title("Basketball Performance Predictor")
+st.markdown("""
+Predict a basketball player's performance based on their statistics.
+""")
+
+# Input Fields for User
+field_goal_percentage = st.number_input("Field Goal Percentage (%)", min_value=0.0, max_value=100.0, step=0.1)
+assists = st.number_input("Assists per Game", min_value=0.0, step=0.1)
+rebounds = st.number_input("Rebounds per Game", min_value=0.0, step=0.1)
+three_point_attempts = st.number_input("3-Point Attempts per Game", min_value=0.0, step=0.1)
+
+# Predict Button
+if st.button("Predict Performance"):
+    # Prepare input data for the model
+    input_data = np.array([field_goal_percentage, assists, rebounds, three_point_attempts]).reshape(1, -1)
+    try:
+        prediction = model.predict(input_data)
+        st.success(f"Predicted Player Performance: {round(prediction[0], 2)}")
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
