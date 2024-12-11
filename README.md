@@ -3,4 +3,4 @@ In this project, I aim to project any basketball player's performance using conc
 
 
 
-Model: [](https://basketball-predictor-ccfy9uywdpzhacraxkzcby.streamlit.app/)
+Model: https://basketball-predictor-ccfy9uywdpzhacraxkzcby.streamlit.app/
