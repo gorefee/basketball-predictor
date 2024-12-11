@@ -4,3 +4,5 @@ In this project, I aim to project any basketball player's performance using conc
 
 
 Model: https://basketball-predictor-ccfy9uywdpzhacraxkzcby.streamlit.app/
+
+Note: the code is in the files "basketball_model.py" and "streamlit_app.py", added comments to hopefully help the reader to understand what each part of the code does.
